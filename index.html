@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jesse Spijker — Industrieel Product Ontwerper</title>
+<meta name="description" content="Portfolio van Jesse Spijker, student Industrieel Product Ontwerpen aan De Haagse Hogeschool. Op zoek naar een afstudeerstage vanaf februari 2027.">
+<link rel="stylesheet" href="Portfolio%20website%20ontwerp%20systeem/styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+<script src="Portfolio%20website%20ontwerp%20systeem/guidelines/_mount.js"></script>
+<style>html{scroll-behavior:smooth} section{scroll-margin-top:70px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const DS = 'Portfolio%20website%20ontwerp%20systeem/';
+const IMG = 'https://jessespijkerportfolio.nl/wp-content/uploads/2025/11/';
+const COPY = {
+  nl: {
+    navProjects:'Projecten', navAbout:'Over mij', navCta:'Neem contact',
+    heroLabel:'PORTFOLIO — IPO, DE HAAGSE HOGESCHOOL',
+    heroTitle:'Industrieel Product Ontwerper',
+    heroIntro:'Hoi! Ik ben Jesse Spijker, vierdejaars IPO-student. Ik word gedreven door problemen oplossen — van statica en wiskundige berekeningen tot duurzaamheidsuitdagingen — en ontwerp functionele, doordachte producten.',
+    heroCta1:'Bekijk projecten', heroCta2:'Meer over mij',
+    heroMeta:'DELFT, NL · AFSTUDEERSTAGE VANAF FEB 2027',
+    projectsTitle:'Projecten', aboutTitle:'Over mij',
+    about1:'Ik studeer Industrieel Product Ontwerpen aan De Haagse Hogeschool. Oorspronkelijk kom ik uit Leiden, maar sinds kort woon ik in Delft. In mijn vrije tijd sport ik graag en speel ik waterpolo bij d’Elft in het eerste team.',
+    designTitle:'Ontwerpen',
+    design1:'Ontwerpen vind ik echt leuk: een probleem uitpluizen en daar een product voor bedenken dat werkt. Tijdens mijn studie heb ik veel ervaring opgedaan, van schetsen en onderzoek tot 3D-modelleren in SolidWorks, simulaties, renders, prototypes bouwen en kostprijsberekeningen.',
+    about2:'Ik daag mezelf graag uit. Afgelopen jaar deed ik een kwart triatlon en een Hyrox. Komend jaar staan een halve marathon en de Alpe d’HuZes op de planning.',
+    navStage:'Stage', stageTitle:'Stage bij WAACS',
+    stageMeta:'WAACS DESIGN EN CONSULTANCY · ROTTERDAM',
+    stage1:'Tijdens mijn meewerkstage bij WAACS design en consultancy in Rotterdam kreeg ik een kijkje in hoe een professioneel ontwerpbureau te werk gaat.',
+    stage2:'In 20 weken hielp ik mee aan zo’n zeven uiteenlopende projecten, elk met een eigen focus: van schetsen en onderzoek tot 3D-modelleren in SolidWorks en Fusion. In Fusion maakte ik renders, en in Photoshop gaf ik renders een schetsmatige look en deed ik schetsonderzoek naar de vormgeving.',
+    stageStats:[['20','WEKEN'],['±7','PROJECTEN']],
+    stageSkillsLabel:'WAT IK DEED',
+    seekLabel:'GEZOCHT',
+    seekText:'Ik zoek een fulltime afstudeerstage Industrieel Product Ontwerpen vanaf semester 2 (februari 2027).',
+    stageSkills:['Schetsen','Onderzoek','Vormgevingsonderzoek','SolidWorks','Fusion','Renderen','Photoshop'],
+    footerHeading:'Laten we kennismaken',
+    footerSub:'Ik zoek een afstudeerstage vanaf februari 2027. Koffie? Mail gerust!',
+    viewProject:'Bekijk project', imgSoon:'BEELD VOLGT',
+  },
+  en: {
+    navProjects:'Projects', navAbout:'About me', navCta:'Get in touch',
+    heroLabel:'PORTFOLIO — IPD, THE HAGUE UNIVERSITY OF APPLIED SCIENCES',
+    heroTitle:'Industrial Product Designer',
+    heroIntro:'Hi! I’m Jesse Spijker, a fourth-year Industrial Product Design student. I’m driven by solving problems — from statics and calculations to sustainability challenges — and I design functional, well-considered products.',
+    heroCta1:'View projects', heroCta2:'More about me',
+    heroMeta:'DELFT, NL · GRADUATION INTERNSHIP FROM FEB 2027',
+    projectsTitle:'Projects', aboutTitle:'About me',
+    about1:'I study Industrial Product Design at The Hague University of Applied Sciences. I’m originally from Leiden and recently moved to Delft. In my spare time I love sports and play water polo in the first team of d’Elft.',
+    designTitle:'Design',
+    design1:'I genuinely enjoy designing: unpicking a problem and coming up with a product that works. During my studies I gained a lot of experience, from sketching and research to 3D modelling in SolidWorks, simulations, renders, building prototypes and cost calculations.',
+    about2:'I like to challenge myself. Last year I completed a quarter triathlon and a Hyrox. Next year I’m running a half marathon and taking part in Alpe d’HuZes.',
+    navStage:'Internship', stageTitle:'Internship at WAACS',
+    stageMeta:'WAACS DESIGN AND CONSULTANCY · ROTTERDAM',
+    stage1:'During my internship at WAACS design and consultancy in Rotterdam, I got an inside look at how a professional design agency works.',
+    stage2:'Over 20 weeks I contributed to around seven diverse projects, each with its own focus: from sketching and research to 3D modelling in SolidWorks and Fusion. I made renders in Fusion, and in Photoshop I gave renders a sketch-like look and did sketch studies of the product form.',
+    stageStats:[['20','WEEKS'],['±7','PROJECTS']],
+    stageSkillsLabel:'WHAT I DID',
+    seekLabel:'LOOKING FOR',
+    seekText:'I’m looking for a full-time graduation internship in Industrial Product Design starting semester 2 (February 2027).',
+    stageSkills:['Sketching','Research','Form studies','SolidWorks','Fusion','Rendering','Photoshop'],
+    footerHeading:'Let’s get acquainted',
+    footerSub:'I’m looking for a graduation internship starting February 2027. Coffee? Feel free to email!',
+    viewProject:'View project', imgSoon:'IMAGE SOON',
+  }
+};
+const PROJECTS = [
+  { i:'01', img:'assets/projects/neo/neo-cover.jpg', href:'projects/powersleeve.html',
+    nl:{t:'Powersleeve', d:'Laptopsleeve met ingebouwde powerbank die de MacBook draadloos oplaadt.', tags:['Productontwerp','KeyShot','SolidWorks']},
+    en:{t:'Powersleeve', d:'A laptop sleeve with a built-in power bank that charges the MacBook wirelessly.', tags:['Product design','KeyShot','SolidWorks']} },
+  { i:'02', img:IMG+'Project-4.1.jpg', href:'projects/stairclimbing-sacktruck.html',
+    nl:{t:'Stairclimbing sacktruck', d:'Steekwagen die elektrisch aangedreven de trap op en af kan.', tags:['Constructie','Elektrisch']},
+    en:{t:'Stair-climbing sack truck', d:'A hand truck that climbs stairs under electric power.', tags:['Construction','Electric']} },
+  { i:'03', img:IMG+'Project-2.2.jpg', href:'projects/artificial-companion.html',
+    nl:{t:'Artificial companion', d:'Een companion die opa’s en oma’s meer interactie geeft bij het innemen van pillen.', tags:['Interactieontwerp','Arduino']},
+    en:{t:'Artificial companion', d:'A companion that gives grandparents more interaction when taking their medication.', tags:['Interaction design','Arduino']} },
+  { i:'04', img:IMG+'Project-1.1.jpg', href:'projects/maaltijdbox.html',
+    nl:{t:'Maaltijdbox', d:'Maaltijdbox in de fietsdrager bevestigen door een mechanische schuif.', tags:['Mechanisch ontwerp','Kunststoffen']},
+    en:{t:'Meal box', d:'Attaching a meal box to a bicycle carrier with a mechanical slide.', tags:['Mechanical design','Plastics']} },
+  { i:'05', img:IMG+'ChatGPT-Image-19-nov-2025-17_05_30.png', href:'projects/staafmixerset.html',
+    nl:{t:'Staafmixerset', d:'Staafmixerset van Princess herontwerpen met nieuwe functies.', tags:['Herontwerp']},
+    en:{t:'Hand blender set', d:'Redesigning the Princess hand blender set with new features.', tags:['Redesign']} },
+  { i:'06', img:IMG+'Project-5.2.jpg', href:'projects/revolving-toilet-dubai.html',
+    nl:{t:'Revolving toilet Dubai', d:'Toilet unit ontworpen voor de islamitische toiletetiquette in Dubai.', tags:['Concept','Onderzoek']},
+    en:{t:'Revolving toilet Dubai', d:'A toilet unit designed for Islamic restroom etiquette in Dubai.', tags:['Concept','Research']} },
+  { i:'07', img:IMG+'Project-6.1.jpg', href:'projects/design-optimisation.html',
+    nl:{t:'Design optimisation', d:'Optimalisatie door middel van analyses — lopend project.', tags:['Analyse','Lopend']},
+    en:{t:'Design optimisation', d:'Optimisation through analysis — ongoing project.', tags:['Analysis','Ongoing']} },
+];
+
+function readLang() { try { const l = localStorage.getItem('js-lang'); return l === 'en' ? 'en' : 'nl'; } catch (e) { return 'nl'; } }
+
+mountDS(
+  ['core/Tag.jsx','core/Button.jsx','core/SectionLabel.jsx','core/LangToggle.jsx','navigation/NavBar.jsx','navigation/Footer.jsx','projects/ProjectCard.jsx','projects/StickyStack.jsx'].map((p) => DS + 'components/' + p),
+  ['Tag','Button','SectionLabel','LangToggle','NavBar','Footer','ProjectCard','StickyStack']
+).then((NS) => {
+  const { NavBar, Footer, SectionLabel, Button, ProjectCard, StickyStack, Tag } = NS;
+  const Section = ({ id, children, style }) => (
+    <section id={id} style={{maxWidth:'var(--container)', margin:'0 auto', padding:'var(--section-y) var(--gutter) 0', ...style}}>{children}</section>
+  );
+  function App() {
+    const [lang, setLangState] = React.useState(readLang);
+    const setLang = (l) => { setLangState(l); try { localStorage.setItem('js-lang', l); } catch (e) {} };
+    React.useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+    React.useEffect(() => {
+      // Na het laden naar #projecten / #over / #contact springen als die in de URL staat
+      if (location.hash) { const el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+    }, []);
+    const t = COPY[lang];
+    return (
+      <div>
+        <NavBar
+          links={[{label:t.navProjects, href:'#projecten'},{label:t.navAbout, href:'#over'},{label:t.navStage, href:'#stage'}]}
+          lang={lang} onLangChange={setLang} ctaLabel={t.navCta} ctaHref="#contact" />
+        <Section style={{paddingTop:'clamp(48px,7vw,96px)'}}>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap:'clamp(28px,5vw,72px)', alignItems:'center'}}>
+            <div style={{display:'flex', flexDirection:'column', gap:26, alignItems:'flex-start'}}>
+              <span style={{fontFamily:'var(--font-mono)', fontSize:'var(--mono-label-size)', letterSpacing:'var(--mono-label-tracking)', color:'var(--accent-text)'}}>{t.heroLabel}</span>
+              <h1 style={{margin:0, fontFamily:'var(--font-display)', fontWeight:'var(--text-hero-weight)', fontSize:'var(--text-hero-size)', letterSpacing:'var(--text-hero-tracking)', lineHeight:'var(--text-hero-leading)', color:'var(--text-heading)', textWrap:'balance'}}>{t.heroTitle}</h1>
+              <p style={{margin:0, maxWidth:560, fontSize:18, textWrap:'pretty'}}>{t.heroIntro}</p>
+              <div style={{display:'flex', gap:12, flexWrap:'wrap'}}>
+                <Button variant="primary" arrow href="#projecten">{t.heroCta1}</Button>
+                <Button variant="ghost" href="#over">{t.heroCta2}</Button>
+              </div>
+              <span style={{fontFamily:'var(--font-mono)', fontSize:'var(--mono-label-size)', letterSpacing:'var(--mono-label-tracking)', color:'var(--text-label)'}}>{t.heroMeta}</span>
+            </div>
+            <img src={IMG+'Portfolio-foto-e1763399360178-1024x699.jpg'} alt="Jesse Spijker"
+              style={{width:'100%', aspectRatio:'4/3', objectFit:'cover', borderRadius:'var(--radius-md)', background:'var(--surface-sunken)'}} />
+          </div>
+        </Section>
+        <Section id="projecten">
+          <SectionLabel index="01">{t.projectsTitle}</SectionLabel>
+          <h2 style={{margin:'28px 0 48px', fontFamily:'var(--font-display)', fontSize:'var(--text-h2-size)', fontWeight:'var(--text-h2-weight)', letterSpacing:'var(--text-h2-tracking)', lineHeight:1.05, color:'var(--text-heading)'}}>{t.projectsTitle}</h2>
+          <StickyStack top={110} step={26} gap={48}>
+            {PROJECTS.map((p) => (
+              <ProjectCard key={p.i} index={p.i} title={p[lang].t} description={p[lang].d}
+                image={p.img} imageAlt={p[lang].t} tags={p[lang].tags}
+                href={p.href} linkLabel={t.viewProject} placeholderLabel={t.imgSoon} />
+            ))}
+          </StickyStack>
+        </Section>
+        <Section id="over">
+          <SectionLabel index="02">{t.aboutTitle}</SectionLabel>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap:'clamp(28px,5vw,72px)', alignItems:'start', marginTop:48}}>
+            <div style={{display:'flex', flexDirection:'column', gap:20}}>
+              <h2 style={{margin:0, fontFamily:'var(--font-display)', fontSize:'var(--text-h2-size)', fontWeight:'var(--text-h2-weight)', letterSpacing:'var(--text-h2-tracking)', lineHeight:1.05, color:'var(--text-heading)'}}>{t.aboutTitle}</h2>
+              <p style={{margin:0, textWrap:'pretty'}}>{t.about1}</p>
+              <h3 style={{margin:'12px 0 0', fontFamily:'var(--font-display)', fontSize:22, fontWeight:600, letterSpacing:'-0.01em', lineHeight:1.2, color:'var(--text-heading)'}}>{t.designTitle}</h3>
+              <p style={{margin:0, textWrap:'pretty'}}>{t.design1}</p>
+              <p style={{margin:0, textWrap:'pretty'}}>{t.about2}</p>
+            </div>
+            <img src={IMG+'Portfolio-foto2-e1763560130518-1024x799.jpg'} alt="Jesse Spijker"
+              style={{width:'100%', aspectRatio:'4/3', objectFit:'cover', borderRadius:'var(--radius-md)', background:'var(--surface-sunken)'}} />
+          </div>
+        </Section>
+        <Section id="stage" style={{paddingBottom:'var(--section-y)'}}>
+          <SectionLabel index="03">{t.navStage}</SectionLabel>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap:'clamp(28px,5vw,72px)', alignItems:'start', marginTop:48}}>
+            <div style={{display:'flex', flexDirection:'column', gap:20}}>
+              <span style={{fontFamily:'var(--font-mono)', fontSize:'var(--mono-label-size)', letterSpacing:'var(--mono-label-tracking)', color:'var(--accent-text)'}}>{t.stageMeta}</span>
+              <h2 style={{margin:0, fontFamily:'var(--font-display)', fontSize:'var(--text-h2-size)', fontWeight:'var(--text-h2-weight)', letterSpacing:'var(--text-h2-tracking)', lineHeight:1.05, color:'var(--text-heading)'}}>{t.stageTitle}</h2>
+              <p style={{margin:0, textWrap:'pretty'}}>{t.stage1}</p>
+              <p style={{margin:0, textWrap:'pretty'}}>{t.stage2}</p>
+              <div style={{marginTop:8, padding:'20px 24px', background:'var(--accent-soft)', borderLeft:'3px solid var(--accent)', borderRadius:'var(--radius-xs)', display:'flex', flexDirection:'column', gap:8}}>
+                <span style={{fontFamily:'var(--font-mono)', fontSize:'var(--mono-label-size)', letterSpacing:'var(--mono-label-tracking)', color:'var(--accent-text)'}}>{t.seekLabel}</span>
+                <p style={{margin:0, color:'var(--ink)', fontWeight:500, textWrap:'pretty'}}>{t.seekText}</p>
+              </div>
+            </div>
+            <div style={{display:'flex', flexDirection:'column', gap:28}}>
+              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', borderTop:'1px solid var(--line)', borderBottom:'1px solid var(--line)'}}>
+                {t.stageStats.map((s, i) => (
+                  <div key={i} style={{padding:'24px 0', paddingLeft: i ? 24 : 0, borderLeft: i ? '1px solid var(--line)' : 'none', display:'flex', flexDirection:'column', gap:6}}>
+                    <span style={{fontFamily:'var(--font-display)', fontWeight:600, fontSize:'clamp(40px,5vw,64px)', letterSpacing:'-0.03em', lineHeight:1, color:'var(--accent)'}}>{s[0]}</span>
+                    <span style={{fontFamily:'var(--font-mono)', fontSize:'var(--mono-label-size)', letterSpacing:'var(--mono-label-tracking)', color:'var(--text-label)'}}>{s[1]}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{display:'flex', flexDirection:'column', gap:14}}>
+                <span style={{fontFamily:'var(--font-mono)', fontSize:'var(--mono-label-size)', letterSpacing:'var(--mono-label-tracking)', color:'var(--text-label)'}}>{t.stageSkillsLabel}</span>
+                <div style={{display:'flex', flexWrap:'wrap', gap:8}}>
+                  {t.stageSkills.map((s) => <Tag key={s}>{s}</Tag>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+        <Footer heading={t.footerHeading} sub={t.footerSub} sectionIndex="04" />
+      </div>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+});
+</script>
+</body>
+</html>

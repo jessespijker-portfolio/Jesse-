@@ -1,0 +1,2 @@
+# UI kit — Portfolio homepage
+Interactieve homepage: NavBar (met werkende NL/EN-toggle), hero met foto, sticky project-stack (StickyStack + ProjectCard, 7 projecten), over mij + ervaring, inverse contact-footer. Alle content uit content/content.md; foto's gehotlinkt van jessespijkerportfolio.nl.

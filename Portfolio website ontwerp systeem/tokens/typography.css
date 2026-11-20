@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  /* Display — strak, tight tracking */
+  --text-hero-size: clamp(44px, 7vw, 92px);
+  --text-hero-weight: 600;
+  --text-hero-leading: 0.98;
+  --text-hero-tracking: -0.03em;
+
+  --text-h2-size: clamp(32px, 4.5vw, 56px);
+  --text-h2-weight: 600;
+  --text-h2-tracking: -0.02em;
+
+  --text-h3-size: 28px;
+  --text-h3-weight: 600;
+
+  /* Body */
+  --text-body-size: 17px;
+  --text-body-leading: 1.6;
+  --text-small-size: 14px;
+
+  /* Mono-labels — technisch randje: UPPERCASE + nummering */
+  --mono-label-size: 12px;
+  --mono-label-tracking: 0.14em;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
+  color: var(--text-body);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--link-hover); }

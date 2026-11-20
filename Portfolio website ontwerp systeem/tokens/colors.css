@@ -1,0 +1,35 @@
+:root {
+  /* Grond */
+  --paper: #F4F3EF;        /* warm off-white, paginagrond */
+  --surface: #FFFFFF;      /* kaarten, panelen */
+  --surface-sunken: #ECEAE3;
+  --inverse: #171610;      /* donkere secties / footer */
+  --inverse-text: #F4F3EF;
+  --inverse-muted: #A5A294;
+
+  /* Inkt */
+  --ink: #171610;          /* koppen, primaire tekst */
+  --ink-2: #4A473E;        /* bodytekst */
+  --ink-3: #807C6C;        /* alleen labels ≥ mono-label-size of decoratief */
+  --line: #DEDCD2;         /* hairlines */
+  --line-strong: #C2BFB1;
+
+  /* Accent — diep petrol */
+  --accent: #1E6E64;       /* grafisch: vlakken, markers, grote type */
+  --accent-text: #15594F;  /* kleine tekst op paper/surface (≥4.5:1) */
+  --accent-soft: #DEEBE6;  /* zachte achtergrond/hover */
+  --accent-on: #FFFFFF;    /* tekst op accentvlak */
+
+  /* Semantisch */
+  --text-heading: var(--ink);
+  --text-body: var(--ink-2);
+  --text-label: var(--ink-3);
+  --surface-card: var(--surface);
+  --border-card: var(--line);
+  --link: var(--ink);
+  --link-hover: var(--accent-text);
+
+  /* Schaduw — spaarzaam, alleen op de sticky stack */
+  --shadow-stack: 0 24px 60px -28px rgba(23, 22, 16, 0.35);
+  --shadow-pop: 0 10px 30px -12px rgba(23, 22, 16, 0.25);
+}
