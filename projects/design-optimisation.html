@@ -4,9 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Design optimisation · Jesse Spijker</title>
-<meta name="description" content="Design optimisation: producten optimaliseren met probleemanalyses en SolidWorks FEM-simulaties. Lopend project.">
+<meta name="description" content="Design optimisation: FEM-analyse en optimalisatie van de inklapbare laadplaat van een steekwagen in SolidWorks.">
 <link rel="stylesheet" href="../Portfolio%20website%20ontwerp%20systeem/styles.css">
 <link rel="stylesheet" href="../assets/css/project.css">
+<style>
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 40px; border-top: var(--border-hairline); border-bottom: var(--border-hairline); }
+.stat { padding: 28px 24px 28px 0; display: flex; flex-direction: column; gap: 8px; }
+.stat + .stat { border-left: var(--border-hairline); padding-left: 24px; }
+.stat strong { font-family: var(--font-display); font-weight: 600; font-size: clamp(36px, 4.5vw, 56px); letter-spacing: -0.03em; line-height: 1; color: var(--accent); }
+@media (max-width: 640px) { .stats { grid-template-columns: 1fr; } .stat + .stat { border-left: 0; padding-left: 0; border-top: var(--border-hairline); } }
+.steps { display: flex; flex-direction: column; gap: 56px; margin-top: 40px; }
+.step { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.step-text { display: flex; flex-direction: column; gap: 12px; }
+.step-imgs { display: grid; gap: 12px; }
+.step-imgs.two { grid-template-columns: 1fr 1fr; }
+.step-imgs .frame img { aspect-ratio: 16 / 10; object-fit: contain; padding: 8px; }
+@media (max-width: 800px) { .step { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
@@ -24,45 +38,117 @@
   <div class="wrap">
     <header class="hero">
       <div class="hero-text">
-        <span class="mono accent"><span lang="nl">Project 07 — Lopend</span><span lang="en">Project 07 — Ongoing</span></span>
+        <span class="mono accent"><span lang="nl">Project 03 — Individueel</span><span lang="en">Project 03 — Individual</span></span>
         <h1>Design optimisation</h1>
-        <p class="hero-intro" lang="nl">In dit project optimaliseren we producten met probleemanalyses en FEM-simulaties in SolidWorks.</p>
-        <p class="hero-intro" lang="en">In this project we optimise products using problem analyses and FEM simulations in SolidWorks.</p>
-        <span class="mono"><span lang="nl">Status — lopend project</span><span lang="en">Status — ongoing project</span></span>
+        <p class="hero-intro" lang="nl">Een FEM-analyse van de inklapbare laadplaat van een steekwagen. De laadplaat moest kunnen inklappen, maar ik verwachtte dat het scharnier te zwak zou zijn voor de volle last van 90 kg. Met simulaties in SolidWorks heb ik het ontwerp in negen stappen verbeterd tot het de last aankon.</p>
+        <p class="hero-intro" lang="en">An FEM analysis of the foldable loading plate of a sack truck. The plate had to fold, but I expected the hinge to be too weak for the full 90 kg load. Using simulations in SolidWorks, I improved the design in nine iterations until it could take the load.</p>
+        <span class="mono">SolidWorks Simulation · FEM · <span lang="nl">Materiaalkeuze</span><span lang="en">Material selection</span></span>
       </div>
       <div class="frame">
-        <img src="https://jessespijkerportfolio.nl/wp-content/uploads/2025/11/Project-6.1.jpg" alt="Design optimisation">
+        <img src="../assets/projects/ado/ado-spanning-ontwerp9.jpg" alt="Spanningsverdeling in de laadplaat, ontwerp 9" width="1283" height="525">
       </div>
     </header>
   </div>
 
   <section class="wrap section">
-    <div class="label"><span class="mono">01 — <span lang="nl">Wat ik doe</span><span lang="en">What I do</span></span></div>
-    <div class="roles cols-2">
+    <div class="label"><span class="mono">01 — <span lang="nl">Resultaat</span><span lang="en">Result</span></span></div>
+    <div class="stats">
+      <div class="stat"><strong>90 kg</strong><span class="mono"><span lang="nl">Draagt de volle last</span><span lang="en">Carries the full load</span></span></div>
+      <div class="stat"><strong>−23%</strong><span class="mono"><span lang="nl">Gewicht: 826 g → 639 g</span><span lang="en">Weight: 826 g → 639 g</span></span></div>
+      <div class="stat"><strong>10 → 6 mm</strong><span class="mono"><span lang="nl">Dikte laadplaat</span><span lang="en">Plate thickness</span></span></div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="label"><span class="mono">02 — <span lang="nl">Wat ik deed</span><span lang="en">What I did</span></span></div>
+    <div class="roles">
       <div class="role">
         <span class="mono accent">A</span>
         <h3><span lang="nl">Probleemanalyse</span><span lang="en">Problem analysis</span></h3>
-        <p lang="nl">Uitzoeken waar een product tekortschiet.</p>
-        <p lang="en">Finding out where a product falls short.</p>
+        <p lang="nl">Bepaald waar het ontwerp zou bezwijken: de last op de laadplaat komt via een hefboom op het scharnier terecht.</p>
+        <p lang="en">Determined where the design would fail: the load on the plate acts on the hinge through a lever.</p>
       </div>
       <div class="role">
         <span class="mono accent">B</span>
-        <h3><span lang="nl">FEM-simulaties in SolidWorks</span><span lang="en">FEM simulations in SolidWorks</span></h3>
-        <p lang="nl">Het ontwerp doorrekenen en verbeteren.</p>
-        <p lang="en">Analysing and improving the design.</p>
+        <h3><span lang="nl">FEM-simulaties</span><span lang="en">FEM simulations</span></h3>
+        <p lang="nl">Spanning en doorbuiging berekend in SolidWorks, met 900 N op de laadplaat en de scharnieren vast.</p>
+        <p lang="en">Calculated stress and deflection in SolidWorks, with 900 N on the plate and the hinges fixed.</p>
+      </div>
+      <div class="role">
+        <span class="mono accent">C</span>
+        <h3><span lang="nl">Optimaliseren</span><span lang="en">Optimisation</span></h3>
+        <p lang="nl">Negen ontwerpvarianten getest: een flens op het scharnier, andere diktes en een aangepaste vorm.</p>
+        <p lang="en">Tested nine design variants: a flange on the hinge, different thicknesses and a revised shape.</p>
+      </div>
+      <div class="role">
+        <span class="mono accent">D</span>
+        <h3><span lang="nl">Materiaalkeuze</span><span lang="en">Material selection</span></h3>
+        <p lang="nl">Via MatWeb een plaataluminium gezocht met een vloeigrens boven 550 MPa: Aluminium 7055-T7751 of 7150-T7751.</p>
+        <p lang="en">Used MatWeb to find a sheet aluminium with a yield strength above 550 MPa: Aluminium 7055-T7751 or 7150-T7751.</p>
       </div>
     </div>
-    <div class="notice">
-      <span class="mono accent"><span lang="nl">Lopend project</span><span lang="en">Ongoing project</span></span>
-      <p lang="nl">Dit project loopt nog. Resultaten en beeld volgen.</p>
-      <p lang="en">This project is still running. Results and visuals will follow.</p>
+  </section>
+
+  <section class="wrap section">
+    <div class="label"><span class="mono">03 — <span lang="nl">Proces</span><span lang="en">Process</span></span></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-text">
+          <span class="mono accent"><span lang="nl">Stap 1 — Uitgangssituatie</span><span lang="en">Step 1 — Starting point</span></span>
+          <h3><span lang="nl">Een inklapbare laadplaat</span><span lang="en">A foldable loading plate</span></h3>
+          <p lang="nl">De steekwagen moet maximaal 90 kg kunnen dragen. In de simulatie heb ik alleen de laadplaat en de scharnieren meegenomen: die zijn met lassen verbonden (bonded) en de scharnieren staan vast. Op de voorkant van de laadplaat staat een kracht van 900 N.</p>
+          <p lang="en">The sack truck has to carry up to 90 kg. In the simulation I only included the loading plate and the hinges: they are welded together (bonded) and the hinges are fixed. A force of 900 N acts on the front of the plate.</p>
+        </div>
+        <div class="step-imgs two">
+          <div class="frame"><img src="../assets/projects/ado/ado-cover.jpg" alt="Steekwagen met inklapbare laadplaat" loading="lazy"></div>
+          <div class="frame"><img src="../assets/projects/ado/ado-randvoorwaarden.jpg" alt="Randvoorwaarden: kracht van 900 N op de laadplaat" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-text">
+          <span class="mono accent"><span lang="nl">Stap 2 — Ontwerp 1</span><span lang="en">Step 2 — Design 1</span></span>
+          <h3><span lang="nl">Het scharnier bezwijkt</span><span lang="en">The hinge fails</span></h3>
+          <p lang="nl">De spanning in het scharnier kwam boven de vloeigrens van het oorspronkelijke aluminium (317 MPa). De laadplaat boog aan het uiteinde 12 mm door en droeg zelf weinig bij aan de sterkte.</p>
+          <p lang="en">The stress in the hinge exceeded the yield strength of the original aluminium (317 MPa). The plate deflected 12 mm at its end and contributed little to the strength.</p>
+        </div>
+        <div class="step-imgs two">
+          <div class="frame"><img src="../assets/projects/ado/ado-spanning-ontwerp1.jpg" alt="Spanning in ontwerp 1" loading="lazy"></div>
+          <div class="frame"><img src="../assets/projects/ado/ado-doorbuiging-ontwerp1.jpg" alt="Doorbuiging in ontwerp 1" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-text">
+          <span class="mono accent"><span lang="nl">Stap 3 — Ontwerp 4</span><span lang="en">Step 3 — Design 4</span></span>
+          <h3><span lang="nl">Een flens en sterker materiaal</span><span lang="en">A flange and a stronger material</span></h3>
+          <p lang="nl">Ik gaf het scharnier een flens en 1 mm extra dikte. De doorbuiging zakte naar 9,4 mm, maar de spanning bleef net onder 550 MPa. Daarom heb ik een sterker plaatmateriaal gekozen: Aluminium 7055-T7751 (621–648 MPa) of 7150-T7751 (565–600 MPa).</p>
+          <p lang="en">I gave the hinge a flange and 1 mm extra thickness. Deflection dropped to 9.4 mm, but the stress stayed just under 550 MPa. So I chose a stronger sheet material: Aluminium 7055-T7751 (621–648 MPa) or 7150-T7751 (565–600 MPa).</p>
+        </div>
+        <div class="step-imgs two">
+          <div class="frame"><img src="../assets/projects/ado/ado-scharnier-flens.jpg" alt="Scharnier met toegevoegde flens" loading="lazy"></div>
+          <div class="frame"><img src="../assets/projects/ado/ado-spanning-ontwerp4.jpg" alt="Spanning in het scharnier, ontwerp 4" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-text">
+          <span class="mono accent"><span lang="nl">Stap 4 — Ontwerp 9</span><span lang="en">Step 4 — Design 9</span></span>
+          <h3><span lang="nl">Lichter én sterk genoeg</span><span lang="en">Lighter and strong enough</span></h3>
+          <p lang="nl">Na verschillende diktes en vormen werd ontwerp 9 het eindresultaat. De laadplaat is nu 6 mm dik in plaats van 10 mm en de zijkanten, waar hij het snelst bezweek, zijn dikker. De plaat buigt 18,4 mm door, maar blijft onder de vloeigrens. Het scharnier houdt nu 90 kg, en het geheel weegt 639 g in plaats van 826 g.</p>
+          <p lang="en">After trying different thicknesses and shapes, design 9 became the final result. The plate is now 6 mm thick instead of 10 mm, and the sides, where it failed first, are thicker. The plate deflects 18.4 mm but stays below the yield strength. The hinge now holds 90 kg, and the assembly weighs 639 g instead of 826 g.</p>
+        </div>
+        <div class="step-imgs two">
+          <div class="frame"><img src="../assets/projects/ado/ado-laadplaat-voor.jpg" alt="Laadplaat voor de optimalisatie" loading="lazy"></div>
+          <div class="frame"><img src="../assets/projects/ado/ado-laadplaat-na.jpg" alt="Laadplaat na de optimalisatie" loading="lazy"></div>
+          <div class="frame"><img src="../assets/projects/ado/ado-doorbuiging-ontwerp9.jpg" alt="Doorbuiging in ontwerp 9" loading="lazy"></div>
+          <div class="frame"><img src="../assets/projects/ado/ado-spanning-ontwerp9.jpg" alt="Spanning in ontwerp 9" loading="lazy"></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <div class="wrap">
     <nav class="pager" aria-label="Projecten">
-      <a href="revolving-toilet-dubai.html"><span class="mono"><span lang="nl">Vorig project</span><span lang="en">Previous project</span></span><strong>Revolving toilet Dubai</strong></a>
-      <a href="powersleeve.html"><span class="mono"><span lang="nl">Terug naar het eerste project</span><span lang="en">Back to the first project</span></span><strong>Powersleeve <span class="arrow">→</span></strong></a>
+      <a href="stairclimbing-sacktruck.html"><span class="mono"><span lang="nl">Vorig project</span><span lang="en">Previous project</span></span><strong><span lang="nl">Stairclimbing sacktruck</span><span lang="en">Stair-climbing sack truck</span></strong></a>
+      <a href="revolving-toilet-dubai.html"><span class="mono"><span lang="nl">Volgend project</span><span lang="en">Next project</span></span><strong>Revolving toilet Dubai <span class="arrow">→</span></strong></a>
     </nav>
     <div class="back"><a class="btn" href="../index.html#projecten"><span lang="nl">Alle projecten</span><span lang="en">All projects</span> <span aria-hidden="true">→</span></a></div>
   </div>
