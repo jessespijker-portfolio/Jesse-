@@ -10,7 +10,16 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
 <script src="Portfolio%20website%20ontwerp%20systeem/guidelines/_mount.js"></script>
-<style>html{scroll-behavior:smooth} section{scroll-margin-top:70px}</style>
+<style>html{scroll-behavior:smooth} section{scroll-margin-top:70px}
+/* Telefoon: geldt alleen onder 720px breed, de laptopweergave blijft gelijk */
+@media (max-width: 720px) {
+  header nav { gap: 14px !important; }
+  header nav > a:not(:first-child) { display: none !important; }
+  #projecten [style*="sticky"] { position: relative !important; top: auto !important; }
+  #projecten article { grid-template-columns: 1fr !important; min-height: 0 !important; gap: 20px !important; padding: 20px !important; }
+  #projecten article > img, #projecten article > div:last-child { order: -1; height: auto !important; aspect-ratio: 4 / 3; max-height: none !important; }
+}
+</style>
 </head>
 <body>
 <div id="root"></div>
